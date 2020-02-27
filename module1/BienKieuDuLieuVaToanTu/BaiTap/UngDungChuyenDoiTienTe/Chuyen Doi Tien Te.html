@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Amount: </label><input type="text" id = amount>
+<label>From current: </label><select id = "fromcurrent">
+     <option value ="VND">VND</option>
+     <option value ="USD">USD</option>
+ </select>
+<label>To current: </label><select id = "tocurrent">
+    <option value = "VND">VND</option>
+     <option value="USD">USD</option>
+ </select>
+<input id="ketqua">
+<button onclick="convert()">Convert</button>
+<script>
+    function convert() {
+        let ketqua = 0;
+        let amount = document.getElementById("amount");
+        let fromcurrent = document.getElementById("fromcurrent").value;
+        let tocurrent = document.getElementById("tocurrent").value;
+        if (fromcurrent === "VND" && tocurrent === "USD") {
+            ketqua = amount.value/23000;
+        } else if (fromcurrent === "USD" && tocurrent === "VND") {
+            ketqua = amount.value*23000;
+        } else {
+            alert("Yeu Cau Nguoi Dung Lua Chon Loai Tien");
+        }
+        document.getElementById("ketqua").value=ketqua
+    }
+</script>
+</body>
+</html>
