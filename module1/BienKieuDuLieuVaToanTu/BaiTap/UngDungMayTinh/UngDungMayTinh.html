@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.write("Caculator");
+    document.write("<br/>");
+</script>
+<input id="so1" type="text">
+<input id="so2" type="text">
+<br/>
+<button type="button" onclick="cong()">Addition(+)</button>
+<button type="button" onclick="tru()">Subtraction(-)</button>
+<button type="button" onclick="nhan()">Multiplication(*)</button>
+<button type="button" onclick="chia()">Division(/)</button>
+<script>
+    function cong() {
+        let so1 = document.getElementById("so1").value;
+        let so2 = document.getElementById("so2").value;
+        so1=parseInt(so1);
+        so2=parseInt(so2);
+        let ketQua1=so1+so2;
+        alert(ketQua);
+    }
+    function tru() {
+        let so1=document.getElementById("so1").value;
+        let so2=document.getElementById("so2").value;
+        so1=parseInt(so1);
+        so2=parseInt(so2);
+        let ketQua=so1-so2;
+        alert(ketQua);
+    }
+    function nhan() {
+        let so1=document.getElementById("so1").value;
+        let so2=document.getElementById("so2").value;
+        so1=parseInt(so1);
+        so2=parseInt(so2);
+        let ketQua=so1*so2;
+        alert(ketQua);
+    }
+    function chia() {
+        let so1=document.getElementById("so1").value;
+        let so2=document.getElementById("so2").value;
+        so1=parseInt(so1);
+        so2=parseInt(so2);
+        let ketQua=so1/so2;
+        alert(ketQua);
+    }
+
+</script>
+
+
+
+</body>
+</html>
