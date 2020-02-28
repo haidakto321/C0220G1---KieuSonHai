@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let weight=prompt("Nhap vao can nang(kg)");
+        let height=prompt("Nhap vao chieu cao(m)");
+        weight=parseFloat(weight); height=parseFloat(height);
+        let bmi= weight/(height*height);
+            if(bmi<18.5) {
+                alert("You are UnderWeight")
+            } else if(bmi>=18.5 && bmi<25) {
+                alert("You are Normal")
+            } else if(bmi>=25 && bmi<30) {
+                alert("You are Overweight")
+            } else {alert("You are Obese")};
+
+    </script>
+</body>
+</html>

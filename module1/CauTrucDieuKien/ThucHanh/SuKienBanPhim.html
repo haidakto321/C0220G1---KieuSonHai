@@ -5,6 +5,46 @@
     <title>Title</title>
 </head>
 <body>
+    <img id="nobita" src="https://james.codegym.vn/pluginfile.php/10805/mod_assign/intro/1.png">
+<script>
+    function upArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top=parseInt(element.style.top) - 5 +'px';
+    }
+    function dowArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top=parseInt(element.style.top) +5+'px';
+    }
+    function rightArrowPressed() {
+        let element=document.getElementById("nobita");
+        element.style.top=parseInt(element.style.top)+5+'px';
+    }
+    function leftArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top=parseInt(element.style.top)+5+'px';
+    }
+    function moveSelecttion() {
+        switch (evt.keyCode) {
+            case 1:
+                leftArrowPressed();
+                break;
+            case 2:
+                rightArrowPressed();
+                break;
+            case 3:
+                upArrowPressed();
+                break;
+            case 4:
+                dowArrowPressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelecttion)
+
+    }
+
+</script>
 
 </body>
 </html>
