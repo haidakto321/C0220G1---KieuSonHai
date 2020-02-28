@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let customerName=prompt("Customer Name");
+        let cmnd=prompt("So CMND");
+        cmnd=parseInt(cmnd);
+        let namSinh=prompt("Enter birthday(dd/mm/yyyy)");
+        let mail=prompt("Enter email");
+        let adress=prompt("Customer adress");
+        let loaiKhachHang=prompt("Type Customer");
+        let giamGia=prompt("Enter Discount If Have");
+        giamGia=parseInt(giamGia);
+        let nguoiDiChung=prompt("Number of accompanying");
+        let loaiPhong=prompt("Type Room");
+        let soNgayThue=prompt("Rent Days");
+        soNgayThue=parseInt(soNgayThue);
+        let loaiDichVu=prompt("Type Service");
+        let giaLoaiDichVu;
+            if(loaiDichVu=='Villa') {
+                giaLoaiDichVu=500
+            } else if(loaiDichVu=='House') {
+                giaLoaiDichVu=300
+            } else {giaLoaiDichVu==100};
+
+
+        let soTienPhaiTra=giaLoaiDichVu*soNgayThue*(1-giamGia/100);
+
+        alert("Informatin of Customer:\n"+"Name of customer: "+customerName+'\n'
+            +'So CMND : '+cmnd+"\n"
+            +'Birthday : '+namSinh+'\n'
+            +"Email : "+mail+'\n'
+            + "Customer Adress : "+adress+'\n'
+            +'Type Customer : '+loaiKhachHang+'\n'
+            +"Discount If Have : "+giamGia+'\n'
+            +"Number of accompanying : "+nguoiDiChung+'\n'
+            +"Type Room : "+loaiPhong +'\n ' +
+            "Rent Days : "+soNgayThue+'\n'
+        + "Type Service : "+loaiDichVu+'\n'
+        +"So Tien Phai Tra: "+soTienPhaiTra);
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
