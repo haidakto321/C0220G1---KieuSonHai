@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let soPhut=prompt('Nhập số phút đã sử dụng');
+        soPhut=parseInt(soPhut);
+        const phiBatBuoc=25000;
+        let phiSuDung;
+        if(soPhut<=50) {
+            phiSuDung=phiBatBuoc+600*soPhut
+        } else if(soPhut>50 && soPhut<=200) {
+            phiSuDung=phiBatBuoc+30000+(soPhut-50)*400
+        } else {
+            phiSuDung=phiBatBuoc+90000+(soPhut-200)*200
+        }
+        alert("Cước điện thoại của bạn là: "+phiSuDung + 'VND');
+    </script>
+
+</body>
+</html>

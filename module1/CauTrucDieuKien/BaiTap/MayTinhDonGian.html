@@ -6,33 +6,36 @@
 </head>
 <body>
     <input id="nhap" type="text"><br>
-    <button type="button" value="1" onclick="caculator()">1</button>
-    <button type="button" value="2" onclick="caculator()">2</button>
-    <button type="button" value="3" onclick="caculator()">3</button>
-    <button type="button" value="+" onclick="caculator()">+</button>
+    <button type="button" value="1" onclick="caculator(this.value)">1</button>
+    <button type="button" value="2" onclick="caculator(this.value)">2</button>
+    <button type="button" value="3" onclick="caculator(this.value)">3</button>
+    <button type="button" value="+" onclick="caculator(this.value)">+</button>
     <br>
-    <button type="button" value="4" onclick="caculator()">4</button>
-    <button type="button" value="5" onclick="caculator()">5</button>
-    <button type="button" value="6" onclick="caculator()">6</button>
-    <button type="button" value="-" onclick="caculator()">-</button>
+    <button type="button" value="4" onclick="caculator(this.value)">4</button>
+    <button type="button" value="5" onclick="caculator(this.value)">5</button>
+    <button type="button" value="6" onclick="caculator(this.value)">6</button>
+    <button type="button" value="-" onclick="caculator(this.value)">-</button>
     <br>
-    <button type="button" value="7" onclick="caculator()">7</button>
-    <button type="button" value="8" onclick="caculator()">8</button>
-    <button type="button" value="9" onclick="caculator()">9</button>
-    <button type="button" value="*" onclick="caculator()">*</button>
+    <button type="button" value="7" onclick="caculator(this.value)">7</button>
+    <button type="button" value="8" onclick="caculator(this.value)">8</button>
+    <button type="button" value="9" onclick="caculator(this.value)">9</button>
+    <button type="button" value="*" onclick="caculator(this.value)">*</button>
     <br>
-    <button type="button" value="C" onclick="caculator()">C</button>
-    <button type="button" value="0" onclick="caculator()">0</button>
-    <button type="button" value="=" onclick="caculator()">=</button>
-    <button type="button" value="/" onclick="caculator()">/</button>
+    <button type="button" value="C" onclick="caculator(this.value)">C</button>
+    <button type="button" value="0" onclick="caculator(this.value)">0</button>
+    <button type="button" value="=" onclick="caculator(this.value)">=</button>
+    <button type="button" value="/" onclick="caculator(this.value)">/</button>
 <script>
-    function caculator() {
-        let nhap=document.getElementById("nhap")
-        nhap.value=(tinh=='=')?
-            eval(nhap.value):
-                (tinh=='C')?
-                    '' : nhap.value+tinh;
-
+    function caculator(value) {
+        let nhap=document.getElementById("nhap");
+        if(value ==='C') {
+            nhap.value="";
+        }
+        else if(value==="=") {
+            nhap.value=eval(nhap.value);
+        } else {
+            nhap.value+=value;
+        }
     }
 </script>
 </body>

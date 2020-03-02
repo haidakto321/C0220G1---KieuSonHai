@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let diemKiemTra=prompt("Nhap vao diem kiem tra");
+        diemKiemTra=parseFloat(diemKiemTra);
+        let diemGiuaKi=prompt("Nhap vao diem giua ki");
+        diemGiuaKi=parseFloat(diemGiuaKi);
+        let diemCuoiKi=prompt("Nhap vao diem cuoi ki");
+        diemCuoiKi=parseFloat(diemCuoiKi);
+        diemTB=(diemKiemTra+diemGiuaKi*2+diemCuoiKi*3)/6;
+        if(diemTB<4) {
+            alert("Không đạt tiêu chuẩn lên lớp");
+        } else if(diemTB>=4 && diemTB<4.9) {
+            alert("Xep loại học lực yếu")
+        } else if(diemTB>=5 && diemTB<=6.4) {
+            alert("Xếp loại học lực trung bình")
+        } else if(diemTB>=6.5 && diemTB<=7.9) {
+            alert("Xếp loại học lực khá")
+        } else {alert('Xếp loại học lực giỏi')}
+    </script>
+
+</body>
+</html>
