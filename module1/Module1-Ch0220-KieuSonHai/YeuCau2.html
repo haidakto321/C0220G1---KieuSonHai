@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let customerName = 'Hải';
+    let cmnd = '233216789';
+    let namSinh = '21/11/1234';
+    let mail = 'qaz@qwe';
+    let adress = 'Đà Nẵng';
+    let loaiKhachHang = 'Gold';
+    let giamGia = '15';
+    let nguoiDiChung = '2';
+    let loaiPhong = 'Business';
+    let soNgayThue = '7';
+    let loaiDichVu = 'Room';
+    let totalPay;
+
+    let choose = prompt('1.Hiển thị trông tin khách hàng' + '\n'
+        + '2.Chỉnh sửa thông tin khách hàng' + '\n' +
+        '3.Hiển thị giá sau khi được giảm giá')
+    switch (choose) {
+        case '1': {
+            //nếu dùng 1 phải khai báo thêm parseInt cho choose vi đang ở dạng chuỗi
+            alert("Tên: " + customerName + '\n' +
+                "CMND: " + '\n' +
+                "Ngày Sinh: " + namSinh + '\n' + "Mail: " + mail + '\n' +
+                "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng" + loaiKhachHang + '\n' +
+                "Giảm giá: " + giamGia + '\n' + "Số người đi chung: " + nguoiDiChung + '\n' +
+                "Loại phòng: " + loaiPhong + '\n' + "Số ngày thuê: " + soNgayThue + '\n' +
+                "Loại dịch vụ: " + loaiDichVu + '\n');
+            break;
+        }
+        case '2': {
+            let chooseEdit = prompt("1.Tên: " + customerName + '\n' +
+                "2.CMND: " + '\n' +
+                "3.Ngày Sinh: " + namSinh + '\n' + "4.Mail: " + mail + '\n' +
+                "5.Địa Chỉ: " + adress + '\n' + "6.Loại Khách Hàng" + loaiKhachHang + '\n' +
+                "7.Giảm giá: " + giamGia + '\n' + "8.Số người đi chung: " + nguoiDiChung + '\n' +
+                "9.Loại phòng: " + loaiPhong + '\n' + "10.Số ngày thuê: " + soNgayThue + '\n' +
+                "11.Loại dịch vụ: " + loaiDichVu + '\n')
+            switch (chooseEdit) {
+                case '1': {
+                    customerName = prompt("Nhập tên");
+                    break;
+                }
+                case '2': {
+                    cmnd=prompt("Nhập số CMND");
+                    break;
+        }       case '3': {
+            namSinh=prompt("Nhập ngày sinh");
+                    break;
+                }
+                case '4': {
+                    mail=prompt("Nhập mail");
+                    break;
+                }
+                case '5': {
+                    adress=prompt("Địa Chỉ");
+                    break;
+                }
+                case '6': {
+                    loaiKhachHang=prompt("Loại Khách Hàng");
+                    break;
+                }
+                case '7': {
+                    giamGia=prompt("Giảm giá");
+                    break;
+                }
+                case '8': {
+                    nguoiDiChung=prompt("Số người đi chung");
+                    break;
+                }
+                case '9': {
+                    loaiPhong=prompt("Loại phòng");
+                    break;
+                }
+                case '10': {
+                    soNgayThue=prompt("Số ngày thuê");
+                    break;
+                }
+                case '11': {
+                    loaiDichVu=prompt("Loại dịch vụ");
+                    break;
+                }
+                default: {
+                    alert("Failed")
+                }
+    }
+    alert("Tên: " + customerName + '\n' +
+        "CMND: " + '\n' +
+        "Ngày Sinh: " + namSinh + '\n' + "Mail: " + mail + '\n' +
+        "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng" + loaiKhachHang + '\n' +
+        "Giảm giá: " + giamGia + '\n' + "Số người đi chung: " + nguoiDiChung + '\n' +
+        "Loại phòng: " + loaiPhong + '\n' + "Số ngày thuê: " + soNgayThue + '\n' +
+        "Loại dịch vụ: " + loaiDichVu + '\n');
+            break;
+        }
+    default:{
+        alert("Bạn hãy chọn các chức năng có trong trình đơn")
+    }
+    }
+
+
+</script>
+
+</body>
+</html>
