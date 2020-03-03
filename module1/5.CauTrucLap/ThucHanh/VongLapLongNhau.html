@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let bangSo;
+        bangSo="<table border='1' width='auto' cellspacing='0' cellpadding='3'>";
+        for(i=1;i<=10;i++) {
+            bangSo=bangSo+"<tr>";
+            for(j=1;j<=10;j++) {
+                bangSo=bangSo+"<td>"+i*j+"</td>";
+            }
+            bangSo=bangSo+"</tr>";
+        }
+        document.write(bangSo);
+    </script>
+</body>
+</html>
