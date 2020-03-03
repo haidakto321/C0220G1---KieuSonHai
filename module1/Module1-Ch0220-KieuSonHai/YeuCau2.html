@@ -12,26 +12,59 @@
     let mail = 'qaz@qwe';
     let adress = 'Đà Nẵng';
     let loaiKhachHang = 'Gold';
-    let giamGia = '15';
+    let giamGia = 15;
     let nguoiDiChung = '2';
     let loaiPhong = 'Business';
-    let soNgayThue = '7';
-    let loaiDichVu = 'Room';
-    let totalPay;
+    let soNgayThue = 7;
+    let loaiDichVu='Room';
+    let giaLoaiDichVu;
+    if(loaiDichVu=='Villa') {
+        giaLoaiDichVu=500
+    } else if(loaiDichVu=='House') {
+        giaLoaiDichVu=300
+    } else {giaLoaiDichVu==100};
+    let giamTheoDiaChi=0;
+    let giamTheoSoNgayThue;
+    let giamTheoLoaiKhachHang=0;
+        if(adress="Đà Nẵng") {
+            giamTheoDiaChi=20
+        } else if(adress="Huế") {
+            giamTheoDiaChi=10
+        } else if(adress="Quảng Nam") {
+            giamTheoDiaChi=5
+        }
+        if(soNgayThue>7) {
+            giamTheoSoNgayThue=30
+        } else if(soNgayThue>=5 && soNgayThue<=7) {
+            giamTheoSoNgayThue=20
+        } else if(soNgayThue>=2 && soNgayThue<=4) {
+            giamTheoSoNgayThue=10
+        }
+        if(loaiKhachHang="Diamond") {
+            giamTheoLoaiKhachHang=15
+        } else if(loaiKhachHang="Plantium") {
+            giamTheoLoaiKhachHang=10
+        } else if(loaiKhachHang="Gold") {
+            giamTheoLoaiKhachHang=5
+        } else if(loaiKhachHang="Silver") {
+            giamTheoLoaiKhachHang=2
+        }
+    giamGia=giamTheoDiaChi+giamTheoSoNgayThue+giamTheoLoaiKhachHang;
+    let totalPay=giaLoaiDichVu*soNgayThue-giamGia;
 
     let choose = prompt('1.Hiển thị trông tin khách hàng' + '\n'
         + '2.Chỉnh sửa thông tin khách hàng' + '\n' +
-        '3.Hiển thị giá sau khi được giảm giá')
+        '3.Hiển thị giá sau khi được giảm giá');
     switch (choose) {
         case '1': {
             //nếu dùng 1 phải khai báo thêm parseInt cho choose vi đang ở dạng chuỗi
             alert("Tên: " + customerName + '\n' +
-                "CMND: " + '\n' +
+                "CMND: " + cmnd+'\n' +
                 "Ngày Sinh: " + namSinh + '\n' + "Mail: " + mail + '\n' +
-                "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng" + loaiKhachHang + '\n' +
+                "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng: " + loaiKhachHang + '\n' +
                 "Giảm giá: " + giamGia + '\n' + "Số người đi chung: " + nguoiDiChung + '\n' +
                 "Loại phòng: " + loaiPhong + '\n' + "Số ngày thuê: " + soNgayThue + '\n' +
-                "Loại dịch vụ: " + loaiDichVu + '\n');
+                "Loại dịch vụ: " + loaiDichVu + '\n'+"Số tiền phải trả: "+totalPay);
             break;
         }
         case '2': {
@@ -66,10 +99,6 @@
                     loaiKhachHang=prompt("Loại Khách Hàng");
                     break;
                 }
-                case '7': {
-                    giamGia=prompt("Giảm giá");
-                    break;
-                }
                 case '8': {
                     nguoiDiChung=prompt("Số người đi chung");
                     break;
@@ -91,9 +120,9 @@
                 }
     }
     alert("Tên: " + customerName + '\n' +
-        "CMND: " + '\n' +
+        "CMND: " + cmnd+'\n' +
         "Ngày Sinh: " + namSinh + '\n' + "Mail: " + mail + '\n' +
-        "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng" + loaiKhachHang + '\n' +
+        "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng: " + loaiKhachHang + '\n' +
         "Giảm giá: " + giamGia + '\n' + "Số người đi chung: " + nguoiDiChung + '\n' +
         "Loại phòng: " + loaiPhong + '\n' + "Số ngày thuê: " + soNgayThue + '\n' +
         "Loại dịch vụ: " + loaiDichVu + '\n');
