@@ -10,7 +10,7 @@
     let cmnd = '233216789';
     let namSinh = '21/11/1234';
     let mail = 'qaz@qwe';
-    let adress = 'Đà Nẵng';
+    let address = 'Đà Nẵng';
     let loaiKhachHang = 'Gold';
     let giamGia = 15;
     let nguoiDiChung = '2';
@@ -22,15 +22,15 @@
         giaLoaiDichVu=500
     } else if(loaiDichVu=='House') {
         giaLoaiDichVu=300
-    } else {giaLoaiDichVu==100};
+    } else {giaLoaiDichVu=100};
     let giamTheoDiaChi=0;
     let giamTheoSoNgayThue;
     let giamTheoLoaiKhachHang=0;
-        if(adress="Đà Nẵng") {
+        if(address==="Đà Nẵng") {
             giamTheoDiaChi=20
-        } else if(adress="Huế") {
+        } else if(address==="Huế") {
             giamTheoDiaChi=10
-        } else if(adress="Quảng Nam") {
+        } else if(address==="Quảng Nam") {
             giamTheoDiaChi=5
         }
         if(soNgayThue>7) {
@@ -40,13 +40,13 @@
         } else if(soNgayThue>=2 && soNgayThue<=4) {
             giamTheoSoNgayThue=10
         }
-        if(loaiKhachHang="Diamond") {
+        if(loaiKhachHang==="Diamond") {
             giamTheoLoaiKhachHang=15
-        } else if(loaiKhachHang="Plantium") {
+        } else if(loaiKhachHang==="Plantium") {
             giamTheoLoaiKhachHang=10
-        } else if(loaiKhachHang="Gold") {
+        } else if(loaiKhachHang==="Gold") {
             giamTheoLoaiKhachHang=5
-        } else if(loaiKhachHang="Silver") {
+        } else if(loaiKhachHang==="Silver") {
             giamTheoLoaiKhachHang=2
         }
     giamGia=giamTheoDiaChi+giamTheoSoNgayThue+giamTheoLoaiKhachHang;
@@ -61,17 +61,17 @@
             alert("Tên: " + customerName + '\n' +
                 "CMND: " + cmnd+'\n' +
                 "Ngày Sinh: " + namSinh + '\n' + "Mail: " + mail + '\n' +
-                "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng: " + loaiKhachHang + '\n' +
+                "Địa Chỉ: " + address + '\n' + "Loại Khách Hàng: " + loaiKhachHang + '\n' +
                 "Giảm giá: " + giamGia + '\n' + "Số người đi chung: " + nguoiDiChung + '\n' +
                 "Loại phòng: " + loaiPhong + '\n' + "Số ngày thuê: " + soNgayThue + '\n' +
-                "Loại dịch vụ: " + loaiDichVu + '\n'+"Số tiền phải trả: "+totalPay);
+                "Loại dịch vụ: " + loaiDichVu + '\n');
             break;
         }
         case '2': {
             let chooseEdit = prompt("1.Tên: " + customerName + '\n' +
                 "2.CMND: " + '\n' +
                 "3.Ngày Sinh: " + namSinh + '\n' + "4.Mail: " + mail + '\n' +
-                "5.Địa Chỉ: " + adress + '\n' + "6.Loại Khách Hàng" + loaiKhachHang + '\n' +
+                "5.Địa Chỉ: " + address + '\n' + "6.Loại Khách Hàng" + loaiKhachHang + '\n' +
                 "7.Giảm giá: " + giamGia + '\n' + "8.Số người đi chung: " + nguoiDiChung + '\n' +
                 "9.Loại phòng: " + loaiPhong + '\n' + "10.Số ngày thuê: " + soNgayThue + '\n' +
                 "11.Loại dịch vụ: " + loaiDichVu + '\n')
@@ -92,7 +92,7 @@
                     break;
                 }
                 case '5': {
-                    adress=prompt("Địa Chỉ");
+                    address=prompt("Địa Chỉ");
                     break;
                 }
                 case '6': {
@@ -118,17 +118,20 @@
                 default: {
                     alert("Failed")
                 }
+
     }
     alert("Tên: " + customerName + '\n' +
         "CMND: " + cmnd+'\n' +
         "Ngày Sinh: " + namSinh + '\n' + "Mail: " + mail + '\n' +
-        "Địa Chỉ: " + adress + '\n' + "Loại Khách Hàng: " + loaiKhachHang + '\n' +
+        "Địa Chỉ: " + address + '\n' + "Loại Khách Hàng: " + loaiKhachHang + '\n' +
         "Giảm giá: " + giamGia + '\n' + "Số người đi chung: " + nguoiDiChung + '\n' +
         "Loại phòng: " + loaiPhong + '\n' + "Số ngày thuê: " + soNgayThue + '\n' +
         "Loại dịch vụ: " + loaiDichVu + '\n');
             break;
         }
-    default:{
+        case '3': {
+            alert("Giá sau khi được giảm là: "+totalPay)}
+        default:{
         alert("Bạn hãy chọn các chức năng có trong trình đơn")
     }
     }
