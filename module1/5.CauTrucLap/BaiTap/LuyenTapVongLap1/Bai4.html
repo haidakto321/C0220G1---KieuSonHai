@@ -9,13 +9,12 @@
         let F1=1;
         let F2=1;
         let F3=0;
-        for(i=1;i<=50;i++) {
+        for(i=1;i<=20;i++) {
             F3=F1+F2;
-            F2=F3;
             F1=F2;
+            F2=F3;
             if(F3%5===0) {
                 break;
-
             }
         } document.write(F3+" "+ "chia het cho 5");
 

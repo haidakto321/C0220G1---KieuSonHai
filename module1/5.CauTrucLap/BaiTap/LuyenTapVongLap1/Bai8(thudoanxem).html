@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type=button id="choi" onclick="choi()">Chơi!</button>
+
+    <script>
+        let soRandom;
+        let soNhapVao;
+        function choi() {
+            let min=parseInt(prompt("Nhập khoảng bắt đầu"));
+            let max=parseInt(prompt("Nhập khoảng kết thúc"));
+            soRandom=Math.floor(Math.random()*(max-min+1))+min;
+            soNhapVao=parseInt(prompt("Nhập số bạn đoán"));
+            let count = 0;
+            while(soRandom!=soNhapVao && count < 2) {
+               alert("Bạn đoán sai. Mời đoán lại");
+                soNhapVao=parseInt(prompt("Nhập số bạn đoán"));
+               count++;
+            }
+            if(count===2) {
+                alert("Ban da thua");
+            } else {
+                alert("Ban da thang")
+            }
+            }
+        // let soNhapVao;
+        // let soRandom;
+        // function choi() {
+        //     let min=parseInt(prompt('Nhập khoảng bắt đầu'));
+        //     let max=parseInt(prompt('Nhập khoảng kết thúc'));
+        //     let count=0;
+        //     soRandom=Math.floor(Math.random()*(max-min+1)) +min;
+        //     do {
+        //         soNhapVao=parseInt(prompt('Nhập số bạn đoán'));
+        //         count++;
+        //     } while(soRandom!=soNhapVao && count<3);
+        //     if(count===3) {
+        //         alert("Bạn đã thua");
+        //     } else {
+        //         alert("Bạn đã thắng");
+        //     }
+        // }
+
+</script>
+
+</body>
+</html>
