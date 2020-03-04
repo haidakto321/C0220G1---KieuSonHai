@@ -6,6 +6,29 @@
 </head>
 <body>
     <script>
+        let nguyenTo=prompt("Nhap so nguyen to can in ra: ");
+        let count=0;
+        let n=2;
+        while(count<nguyenTo) {
+            let status=true;
+            if(n===2) {
+                document.write(n+'<br/>');
+                count++
+            } else {
+                for (let i=2;i<(n-1);i++) {
+                    if(n%i===0) {
+                        status=false;
+                        break;
+                    }
+                }
+                if(status) {
+                    document.write(n+'<br/>');
+                    count++;
+                }
+
+            }
+        n++;
+        }
 
     </script>
 
