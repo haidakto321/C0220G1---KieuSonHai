@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>TỪ ĐIỂN ĐƠN GIẢN</h4>
+<input id="tiengAnh" type="text">
+<button onclick="dich()" type="button" >Translate</button>
+<br>
+<p id="tiengViet"/>
+<script>
+    let tiengAnh = document.getElementById("tiengAnh");
+    let mangEl = ["hello", "how", "old", "are", "you", "my", "name", "is", "thanks"];
+    let mangVie = ["xin chào", "thế nào", "cũ, hỏi tuổi", "là", "bạn", "của tôi", "tên", "là", "cảm ơn"];
+    let status = true;
+
+    function dich() {
+        for (let i = 0; i < mangEl.length; i++) {
+            if (mangEl[i] == tiengAnh.value) {
+                status = false;
+                document.getElementById("tiengViet").innerHTML = mangVie[i];
+                break;
+            }
+        }
+        if (status) {
+            alert("Không tìm được từ");
+        }
+
+
+    }
+</script>
+
+
+</body>
+</html>
