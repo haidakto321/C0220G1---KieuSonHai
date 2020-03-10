@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let customerName=prompt("Customer Name");
+    customerName=customerName.trim().toLowerCase();
+    let tempName="";
+    for(let i=0;i<name.length;i++) {
+        if(customerName.charAt(i)===" "&&customerName.charAt(i+1)===" ") {
+            continue;
+        }
+        if(i===0||name.charAt(i-1)==="") {
+            tempName+=name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName+=name.charAt(i);
+    }
+    customerName=tempName;
+    let check=false;
+    do{
+        cmnd=prompt("Nhập số CMND")
+        if(!isNaN(cmnd)) {
+            cmnd=Number.parseFloat(cmnd);
+        }
+        if(!Number.isInteger(cmnd)) {
+            alert("CMND phải là số nguyên");
+            continue;
+        }
+        if(cmnd<10000000 || cmnd>99999999) {
+            alert("CMND không đúng định dạng");
+            continue;
+        }
+        check=true;
+    } while(!check);
+    check=false;
+    do {
+        namSinh=prompt("Nhập birthday: ");
+        if(namSinh.charAt(2)==="/" && namSinh.charAt(5)==="/") {
+            // substring để lấy ra phần tử số 0 và 1 của namSinh
+            let day=namSinh.substring(0,2);
+            let month=namSinh.substring(3,5);
+            let year=namSinh.substring(6,10);
+            if(!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day=Number.parseFloat(day);
+                month=Number.parseFloat(month);
+                year=Number.parseFloat(year);
+                if(Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if(day<32&&month<13&&year>1950) {
+                        check=true;
+                    }
+                }
+            }
+            if(check===false) {
+                alert("Ngày sinh không đúng định dạng");
+            }
+        }
+    } while(!check);
+    check=false;
+    do {
+        let countAt=0;
+        let countDoc=0;
+        let email=prompt("Nhập mail: ")
+        for(let i=0;i<email.length;i++) {
+            if(email.charAt(i)==="@") {
+                countAt++;
+                for(let j=i+1;j<email.length;j++) {
+                    if(email.charAt(j)===".") {
+                        countDoc++;
+                    }
+                }
+            }
+        }
+        if(countAt!=1 || countDoc<1) {
+            alert("Email sai định dạng");
+        } else {
+            check=true;
+        }
+    } while(!check);
+    check=false;
+    let adress=prompt("Customer adress");
+    let tempAdress;
+    adress=adress.toLowerCase().trim();
+    for(let i=0;i<adress.length;i++) {
+        if(adress.charAt(i)===" "&&adress.charAt(i+1)===" ") {
+            continue;
+        }
+        if(i===0||adress.charAt(i-1)===" ") {
+            tempAdress+=adress.charAt(i).toUpperCase()
+            continue;
+        }
+        tempAdress+=adress.charAt(i);
+    }
+    adress=tempAdress;
+    let loaiKhachHang=prompt("Type Customer");
+    loaiKhachHang=loaiKhachHang.trim().toLowerCase();
+    for(let i=0;i<loaiKhachHang.length;i++) {
+        if(loaiKhachHang.charAt(i)===""&&loaiKhachHang.charAt(i+1)==="") {
+            continue;
+        }
+        if(i===0) {
+            loaiKhachHang+=loaiKhachHang.charAt(i).toUpperCase();
+        }
+    }
+    let giamGia=prompt("Enter Discount If Have");
+    giamGia=parseInt(giamGia);
+    do {
+        let nguoiDiChung = prompt("Number of accompanying: ");
+        if(!isNaN(nguoiDiChung)) {
+            nguoiDiChung=Number.parseFloat(nguoiDiChung);
+            if(Number.isInteger(nguoiDiChung)&&nguoiDiChung>=0) {
+                check=true;
+            }
+        }
+        if(!check) {
+            alert("Số người đi chung phải lớn hơn hoặc bằng 0");
+        }
+    } while(!check);
+    check=false;
+    let loaiPhong=prompt("Type Room");
+    do {
+        let soNgayThue = prompt("Rent days: ");
+        if(!isNaN(soNgayThue)) {
+            soNgayThue=Number.parseFloat(soNgayThue);
+            if(Number.isInteger(soNgayThue)&&soNgayThue>0) {
+                check=true;
+            }
+        }
+        if(!check) {
+            alert("Rent days không phải số nguyên dương");
+        }
+    } while(!check);
+    check=false;
+    let loaiDichVu=prompt("Type Service");
+    let giaLoaiDichVu;
+    if(loaiDichVu=='Villa') {
+        giaLoaiDichVu=500
+    } else if(loaiDichVu=='House') {
+        giaLoaiDichVu=300
+    } else {giaLoaiDichVu==100};
+
+
+    let soTienPhaiTra=giaLoaiDichVu*soNgayThue*(1-giamGia/100);
+
+    alert("Informatin of Customer:\n"+"Name of customer: "+customerName+'\n'
+        +'So CMND : '+cmnd+"\n"
+        +'Birthday : '+namSinh+'\n'
+        +"Email : "+mail+'\n'
+        + "Customer Adress : "+adress+'\n'
+        +'Type Customer : '+loaiKhachHang+'\n'
+        +"Discount If Have : "+giamGia+'\n'
+        +"Number of accompanying : "+nguoiDiChung+'\n'
+        +"Type Room : "+loaiPhong +'\n ' +
+        "Rent Days : "+soNgayThue+'\n'
+        + "Type Service : "+loaiDichVu+'\n'
+        +"So Tien Phai Tra: "+soTienPhaiTra+$);
+</script>
+
+</body>
+</html>

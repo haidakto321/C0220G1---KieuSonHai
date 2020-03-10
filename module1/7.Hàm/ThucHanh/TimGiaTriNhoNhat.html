@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" onclick="mangso()" value="Tim MIN">
+    <script>
+        let arr1=[3, 5, 1, 8, -3, 7, 8];
+        let arr2=[7, 12, 6, 9, 20, 56, 89];
+        let arr3=[];
+        let arr4=[0, 0, 0, 0, 0, 0];
+        function timMin(mang) {
+             if(arr.length==0) {
+                return -1;
+             }
+            let min=arr[1];
+            let vitri=0;
+            for(let i=1;i<arr.length;i++) {
+                if(arr[i]<min) {
+                    min=arr[i];
+                    vitri=i;
+                }
+            }
+        }
+        function mangso() {
+            let mang = [7, 12, 6, 9, 20, 56, 89];
+            document.write("mangso[" + mang + "] <br>");
+            let timmin = timMin(mang);
+            document.write("Phan tu nho nhat trong mang la mangso[" + timmin + "] = " + mang[timmin])
+        }
+    </script>
+
+</body>
+</html>
