@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let timsao=prompt("Nhập tên ngôi sao");
+        let sao=ngoisao(timsao);
+
+        function ngoisao(sao) {
+            let sao1=["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+            let sao2=["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+            for(let i=0;i<sao1.length;i++) {
+                if(sao===sao1[i]) {
+                    return sao2[i]
+                }
+            }
+            return -1
+            //nếu dùng return false thì if ở dưới dùng if(!sao) vì trừ 0 và false tất cả đều trả về true
+        }
+        if(sao===-1) {
+            document.write("ko có tên ngôi sao tương ứng");
+        } else {
+            document.write("Tên ngôi sao tương ứng của " +timsao+" là "+sao);
+        }
+    </script>
+
+</body>
+</html>
