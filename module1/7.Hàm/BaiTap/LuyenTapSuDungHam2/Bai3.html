@@ -7,7 +7,7 @@
 <body>
     <script>
         let so=parseFloat(prompt("Nhập vào 1 số: "));
-        giaithua();
+        let kq=giaithua();
         function giaithua() {
             let kq = 1;
             if (so >= 1) {
@@ -17,6 +17,7 @@
             } else if(so=0) {
                 document.write("Giai thừa bằng 1");
             }
+            return kq
         }
         document.write("Giai thừa của "+so+" là "+kq);
     </script>

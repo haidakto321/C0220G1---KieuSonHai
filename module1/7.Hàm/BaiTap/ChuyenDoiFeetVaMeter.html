@@ -26,12 +26,12 @@
         function chuyendoi() {
             let luachon = document.getElementById("luachon")
             let giatri = document.getElementById("nhapso")
-            let ketqua= 0
+            let ketqua= 0;
             if(luachon.value == "feet"){
-                ketqua= changeFeetToMeter(giatri.value)
+                ketqua= changeFeetToMeter(giatri.value);
                 document.getElementById("ketQua").innerHTML = "Kết quả = "+ketqua+" meters"
             }else{
-                ketqua= changeMeterToFeet(giatri.value)
+                ketqua= changeMeterToFeet(giatri.value);
                 document.getElementById("ketQua").innerHTML = "Kết quả = "+ketqua+" feet"
             }
         }

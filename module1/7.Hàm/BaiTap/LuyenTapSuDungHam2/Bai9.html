@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let kitu=prompt("Nhập vào kí tự bất kì");
+        let mang = ['a','b','b','c','d','e','e','e','d','f'];
+        document.write("Mảng gồm: "+mang+"<br>");
+        let kiemtra=kiemtramang(kitu,mang);
+        if(kiemtra>0) {
+            document.write("Có "+kiemtra+" kí tự "+kitu+" trong mảng ")
+        } else {
+            document.write("Không tìm được kí tự trong mảng");
+        }
+        function kiemtramang(kitu,mang) {
+            let count=0;
+            for(let i=0;i<mang.length;i++) {
+                if(kitu===mang[i]) {
+                    count++
+                }
+            }
+            if(count>0) {
+                return count
+            } else {
+                return -1
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
