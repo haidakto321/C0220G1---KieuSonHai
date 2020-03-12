@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // tạo lớp MyDate
+        let MyDate=function (day,month,year) {
+            this.day=day;
+            this.month=month;
+            this.year=year;
+            this.getDay=function () {
+                return this.day
+            }
+            this.getMonth=function () {
+                return this.month
+            }
+            this.getYear=function () {
+                return this.year
+            }
+            this.setDay=function (day) {
+                this.day=day;
+            }
+            this.setMonth=function (month) {
+                this.month=month
+            }
+            this.setYear=function (year) {
+                this.year=year
+            }
+
+        };
+        let date_today=new MyDate(7,7,2007);
+        let day = date_today.getDay();
+        let month = date_today.getMonth();
+        let year = date_today.getYear();
+        alert(day + "/" + month + "/" + year);
+    </script>
+
+</body>
+</html>
