@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+            constructor(nhietdo) {
+                this.nhietdo = nhietdo;
+                this.getNhietdo = function () {
+                    return this.nhietdo
+                };
+                if (this.nhietdo >= -273) {
+                    this.CtoF = function () {
+                        return (this.nhietdo * 1.8) + 32
+                    };
+                    this.CtoK = function () {
+                        return this.nhietdo*1 + 273.15
+                    };
+                } else {
+                    return alert("Nhiệt độ C phải lớn hơn -273")
+                }
+            }
+        }
+        let t=prompt("Nhập nhiệt độ C");
+        let kq=new Temperature(t);
+        let C=kq.getNhietdo();
+        let F=kq.CtoF();
+        let K=kq.CtoK();
+        document.write("Nhiệt độ " +C+" C "+" bằng "+F+" F "+" bằng " +K+" K " );
+
+
+    </script>
+
+</body>
+</html>

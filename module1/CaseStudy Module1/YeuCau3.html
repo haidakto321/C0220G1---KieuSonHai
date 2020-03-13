@@ -22,7 +22,7 @@
     customerName=tempName;
     let check=false;
     do{
-        cmnd=prompt("Nhập số CMND")
+        cmnd=prompt("Nhập số CMND");
         if(!isNaN(cmnd)) {
             cmnd=Number.parseFloat(cmnd);
         }
@@ -40,7 +40,6 @@
     do {
         namSinh=prompt("Nhập birthday: ");
         if(namSinh.charAt(2)==="/" && namSinh.charAt(5)==="/") {
-            // substring để lấy ra phần tử số 0 và 1 của namSinh
             let day=namSinh.substring(0,2);
             let month=namSinh.substring(3,5);
             let year=namSinh.substring(6,10);

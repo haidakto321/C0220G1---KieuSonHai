@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        class Rectangle {
+            constructor(length,width,) {
+                this.length=length;
+                this.getLength=function () {
+                    return length
+                };
+                this.width=width;
+                this.getWidth=function () {
+                    return width
+                };
+                this.dientich=function () {
+                    return this.getLength*this.getWidth
+                };
+                this.chuvi=function () {
+                    return (this.getWidth()+this.getLength)*2
+                };
+            }
+        }
+        let hinhchunhat=new Rectangle(600,200);
+        let chieudai=hinhchunhat.getLength();
+        let chieurongg=hinhchunhat.getWidth();
+        let chuvi=hinhchunhat.chuvi();
+        let dientich=hinhchunhat.dientich();
+        document.write("Chu vi của hình chữ nhật là "+chuvi+"<br> Diện tích của hình chữ nhật là "+dientich);
+         function createRectangle() {
+             let ctx=document.getElementById("myCanvas").getContext("2d");
+             hinhchunhat=new Rectangle();
+             ctx.fillStyle="#7b62ff";
+             ctx.fillRect(0,0,600,200);
+         }
+         createRectangle();
+    </script>
+
+</body>
+</html>

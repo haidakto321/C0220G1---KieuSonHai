@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Mobile {
+            constructor(battery,writingMessage,recivedMessage,sentMessage) {
+                this.battery= battery;
+                this.writingMessage=writingMessage;
+                this.recivedMessage=recivedMessage;
+                this.status=false;
+                this.charge=function () {
+                    while(this.battery<=100) {
+                        this.battery++
+                    }
+                };
+                this.turnOn=function () {
+                    if(this.battery>0) {
+                        this.status=true
+                    } else {
+                        this.charge();
+                        this.status=true;
+                    }
+                };
+                this.turnOf=function () {
+                    this.status=false;
+                }
+                this.writingMessage=function () {
+                    this.writingMessage.push(prompt("Nhập tin nhắn: "));
+                }
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
