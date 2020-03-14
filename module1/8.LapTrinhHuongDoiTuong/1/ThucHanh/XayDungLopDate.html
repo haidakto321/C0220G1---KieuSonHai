@@ -6,36 +6,63 @@
 </head>
 <body>
     <script>
-        // tạo lớp MyDate
-        let MyDate=function (day,month,year) {
-            this.day=day;
-            this.month=month;
-            this.year=year;
-            this.getDay=function () {
-                return this.day
+        // let MyDate=function (day,month,year) {
+        //     this.day=day;
+        //     this.month=month;
+        //     this.year=year;
+        //     this.getDay=function () {
+        //         return this.day
+        //     }
+        //     this.getMonth=function () {
+        //         return this.month
+        //     }
+        //     this.getYear=function () {
+        //         return this.year
+        //     }
+        //     this.setDay=function (day) {
+        //         this.day=day;
+        //     }
+        //     this.setMonth=function (month) {
+        //         this.month=month
+        //     }
+        //     this.setYear=function (year) {
+        //         this.year=year
+        //     }
+        //
+        // };
+        // let date_today=new MyDate(7,7,2007);
+        // let day = date_today.getDay();
+        // let month = date_today.getMonth();
+        // let year = date_today.getYear();
+        // alert(day + "/" + month + "/" + year);
+
+        class MyDate{
+            constructor() {
+                this.day=day;
+                this.month=month;
+                this.year=year;
             }
-            this.getMonth=function () {
-                return this.month
-            }
-            this.getYear=function () {
-                return this.year
-            }
-            this.setDay=function (day) {
+            setDay(day) {
                 this.day=day;
             }
-            this.setMonth=function (month) {
-                this.month=month
+            setMonth(month) {
+                this.month=month;
             }
-            this.setYear=function (year) {
-                this.year=year
+            setYear(year) {
+                this.year=year;
             }
-
-        };
-        let date_today=new MyDate(7,7,2007);
-        let day = date_today.getDay();
-        let month = date_today.getMonth();
-        let year = date_today.getYear();
-        alert(day + "/" + month + "/" + year);
+            setDate(day,month,year) {
+                this.date=day;
+                this.month=month;
+                this.year=year;
+            }
+            toString() {
+                return "Hôm nay ngày: "+this.day+" tháng: "+this.month+" năm "+this.year
+            }
+        }
+        let homnay=new MyDate(13,3,2020);
+        homnay.setDay(14);
+        alert(homnay.toString);
     </script>
 
 </body>
