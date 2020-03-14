@@ -25,8 +25,18 @@
             }
                 break;
             case 2: {
+                let check=false;
                 let nameCustomer=prompt("Nhập tên người dùng muốn xóa: ");
-
+                for(let i=0;i<arrNameCustomer.length;i++) {
+                    if(arrNameCustomer[i]===nameCustomer) {
+                        // splice cắt từ vị trí i 1 phần tử
+                        arrNameCustomer.splice(i,1);
+                        check=true;
+                    }
+                }
+                if(check=false) {
+                    alert("Tên bạn muốn xóa ko có trong mảng.")
+                }
             }
             default: {
                 alert("Failed");
