@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <img >
+    <img id="bongden" src="img/Den_Tat.gif">
     <button value="Bat_tat" onclick="turnOn_TurnOff()">Bật-Tắt</button>
     <script>
         class SwitchButton {
@@ -31,14 +31,14 @@
                     document.getElementById("bongden").src="img/Den_Sang.gif";
                     document.getElementById("result").innerHTML="Bóng đèn đã bật";
                 } else {
-                    document.getElementById("bongden").src="img/Den_Sang.gif";
+                    document.getElementById("bongden").src="img/Den_Tat.gif";
                     document.getElementById("result").innerHTML="Bóng đèn đã tắt";
                 }
             }
         }
-        let switchButton=new switchButton(false);
+        let switchButton=new SwitchButton(false);
         let lamp=new Light(switchButton);
-        function turnon_Turnoff() {
+        function turnOn_TurnOff() {
              switchButton.turnon_turnoff();
              lamp.onLight();
         }
