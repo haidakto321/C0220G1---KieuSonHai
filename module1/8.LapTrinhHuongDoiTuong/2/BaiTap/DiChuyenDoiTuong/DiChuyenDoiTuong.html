@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<div id="game"></div>
     <script>
         function Hero(image, top, left, size){
             this.image = image;
@@ -17,23 +18,47 @@
                     ' height="'+ this.size + '"' +
                     ' src="' + this.image +'"' +
                     ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
-            }
+            };
 
             this.moveRight = function(){
-                this.left += 20;
-                console.log('ok: ' + this.left);
+                this.left += 40;
+                console.log(this.left);
+            };
+            this.moveLeft = function(){
+                this.left -= 40;
+                console.log(this.left);
+            };
+            this.moveBottom=function () {
+                this.top+=40;
+                console.log(this.top)
+            };
+            this.moveTop=function () {
+                this.top-=40;
+                console.log(this.top)
             }
 
         }
-
-        var hero = new Hero('pikachu.png', 20, 30, 200);
-
+        let hero = new Hero('pikachu.png', 0, 0, 200);
+        let temp1=true;
+        let temp2=true;
         function start(){
-            if(hero.left < window.innerWidth - hero.size){
+            if(hero.left < window.innerWidth-hero.size && temp1){
                 hero.moveRight();
+            } else if(hero.top<window.innerHeight-hero.size-30&&temp2) {
+                temp1=false;
+                hero.moveBottom();
+            } else if(hero.top>=window.innerHeight-hero.size-30&&hero.left>0) {
+                temp2=false;
+                hero.moveLeft();
+            } else if(hero.top>0) {
+                hero.moveTop();
+            } else {
+                temp1=true;
+                temp2=true;
             }
+
             document.getElementById('game').innerHTML = hero.getHeroElement();
-            setTimeout(start, 500)
+            setTimeout(start,100);
         }
 
         start();
