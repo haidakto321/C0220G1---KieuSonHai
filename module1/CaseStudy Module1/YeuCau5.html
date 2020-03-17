@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arrListCustomer=[];
+        function displayMainMenu() {
+            let choose=parseInt(prompt("1.Add new customer."+"\n"+"2.Display Information Customer"+"\n3.Edit information Customer."
+            +"\n4.Delete customer"+"\n5.Exit"));
+            switch (choose) {
+                case 1: {
+                    addNewCustomer();
+                    break;
+                }
+                case 2: {
+                    displayCustomer();
+                    break;
+                }
+                case 3: {
+                    editCustomer();
+                    break;
+                }
+                case 4: {
+                    break;
+                }
+                case 5: {
+                    break;
+                }
+                default: {
+                    alert("Failed");
+                }
+            }
+        }
+        function addNewCustomer() {
+            let customerInfo=[];
+            let customerName=prompt("Customer Name");
+            let cmnd=prompt("So CMND");
+            cmnd=parseInt(cmnd);
+            let namSinh=prompt("Enter birthday(dd/mm/yyyy)");
+            let mail=prompt("Enter email");
+            let adress=prompt("Customer adress");
+            let loaiKhachHang=prompt("Type Customer");
+            let giamGia=prompt("Enter Discount If Have");
+            giamGia=parseInt(giamGia);
+            let nguoiDiChung=prompt("Number of accompanying");
+            let loaiPhong=prompt("Type Room");
+            let soNgayThue=prompt("Rent Days");
+            soNgayThue=parseInt(soNgayThue);
+            let loaiDichVu=prompt("Type Service");
+            customerInfo.push(customerName);
+            customerInfo.push(cmnd);
+            customerInfo.push(namSinh);
+            customerInfo.push(mail);
+            customerInfo.push(adress);
+            customerInfo.push(loaiKhachHang);
+            customerInfo.push(giamGia);
+            customerInfo.push(nguoiDiChung);
+            customerInfo.push(loaiPhong);
+            customerInfo.push(soNgayThue);
+            customerInfo.push(loaiDichVu);
+
+            arrListCustomer.push(customerInfo);
+
+            alert("Đã thêm thành công.");
+            displayMainMenu();
+        }
+        function displayCustomer() {
+            let temp="";
+            for(let i=0;i<arrListCustomer.length;i++) {
+                temp+=i+". Name: "+arrListCustomer[i][0]+"\n"
+            }
+            let chooseDisplay=parseInt(prompt(temp));
+            alert("Tên: " + arrListCustomer[chooseDisplay][0] + '\n' +
+                "CMND: " + arrListCustomer[chooseDisplay][1]+'\n' +
+                "Ngày Sinh: " + arrListCustomer[chooseDisplay][2] + '\n' + "Mail: " + arrListCustomer[chooseDisplay][3] + '\n' +
+                "Địa Chỉ: " + arrListCustomer[chooseDisplay][4] + '\n' + "Loại Khách Hàng: " + arrListCustomer[chooseDisplay][5] + '\n' +
+                "Giảm giá: " + arrListCustomer[chooseDisplay][6] + '\n' + "Số người đi chung: " + arrListCustomer[chooseDisplay][7] + '\n' +
+                "Loại phòng: " + arrListCustomer[chooseDisplay][8] + '\n' + "Số ngày thuê: " + arrListCustomer[chooseDisplay][9] + '\n' +
+                "Loại dịch vụ: " + arrListCustomer[chooseDisplay][10] + '\n');
+            displayMainMenu();
+        }
+        function editCustomer() {
+
+        }
+        displayMainMenu();
+
+    </script>
+
+</body>
+</html>

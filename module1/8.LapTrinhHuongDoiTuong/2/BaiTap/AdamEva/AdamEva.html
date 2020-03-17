@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight=weight;
+            }
+            getWeightApple=function () {
+                return this.weight
+            };
+            decrease=function () {
+                if(this.weight>0) {
+                    this.weight--;
+                }
+            };
+            checkApple() {
+                if(this.weight<=0) {
+                    return false;
+                } else {
+                    this.decrease();
+                    return true;
+                }
+            }
+        }
+        class Human {
+            constructor(name,gender,weight) {
+                this.name=name;
+                this.gender=gender;
+                this.weight=weight;
+            }
+            setName=function () {
+                this.name=name;
+            };
+            setGender=function (boolean) {
+                this.gender=boolean
+            };
+            getName=function () {
+                console.log("Tên là: "+this.name);
+                return this.name;
+            };
+            getWeight=function () {
+                console.log("Cân nặng"+this.weight+" kg ");
+                return this.weight;
+            };
+            isMale=function () {
+                if(this.gender===false) {
+                    console.log("Giới tính nữ.");
+                    return "Nữ";
+                } else {
+                    console.log("Giới tính nam.");
+                    return "Nam";
+                }
+            };
+            eat=function (apple) {
+                if(apple.checkApple()===true) {
+                    apple.decrease();
+                    this.weight++;
+                } else {
+                    document.write("Đã ăn hết táo")
+                }
+            }
+        }
+        let apple=new Apple(5);
+        let human=new Human()
+    </script>
+
+</body>
+</html>
