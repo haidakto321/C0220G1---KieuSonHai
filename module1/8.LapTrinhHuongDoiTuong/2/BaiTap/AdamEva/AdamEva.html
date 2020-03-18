@@ -36,6 +36,9 @@
             setName=function () {
                 this.name=name;
             };
+            setWeight=function () {
+                this.weight=weight;
+            };
             setGender=function (boolean) {
                 this.gender=boolean
             };
@@ -65,8 +68,15 @@
                 }
             }
         }
-        let apple=new Apple(5);
-        let human=new Human()
+        let apple=new Apple(10);
+        let human=new Human();
+        human.setName("Adam");
+        human.setWeight("77kg");
+        human.setGender(true);
+        human.eat(apple);
+        for(let i=0;i<10;i++) {
+            human.eat()
+        }
     </script>
 
 </body>

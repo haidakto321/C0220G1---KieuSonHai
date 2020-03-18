@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Rat {
+            constructor(name,weight,speed) {
+                this.name=name;
+                this.weight=weight;
+                this.speed=speed;
+                this.status=true;
+            }
+            getRatName=function () {
+                return this.name
+            };
+            getRatWeight=function () {
+                return this.weight
+            };
+            getRatSpeed=function () {
+                return this.speed
+            };
+            checkRatStatus=function () {
+                if(this.status===false) {
+                    console.log("Chuột "+this.name+" đã chết ");
+                    return false
+                } else {
+                    console.log("Chuột còn sống");
+                    return true
+                }
+            };
+            alive=function () {
+                this.status=true
+            };
+            die=function () {
+                this.status=false
+            };
+            ratSound=function () {
+                console.log("Chít chít");
+            };
+        }
+        class Cat {
+            constructor(name,weight,speed) {
+                this.name=name;
+                this.weight=weight;
+                this.speed=speed;
+            }
+            getNameCat=function () {
+                return this.name
+            };
+            getWeightCat=function () {
+                return this.weight
+            };
+            getSpeedCat=function () {
+                return this.speed
+            };
+            soundCat=function () {
+                console.log("Meo meo");
+            };
+
+            catchRat=function (rat) {
+                if(rat.checkRatStatus) {
+                    if(rat.getRatSpeed()>this.speed) {
+                        console.log(rat.getRatName()+" đã chạy thoát vì quá nhanh")
+                    } else {
+                        this.weight+=rat.getRatWeight();
+                        rat.status=false;
+                        console.log(this.name+" đã ăn được "+rat.getRatName()+" và tăng thêm " +rat.getRatWeight()+" kg= "+this.weight+"kg")
+                    }
+                }
+            }
+        }
+        let rat1=new Rat("Jerry",4,5);
+        let rat2=new Rat("Nibbles",2,3);
+        let cat=new Cat("Tom",10,4);
+        cat.catchRat(rat2);
+        rat2.checkRatStatus();
+
+    </script>
+
+</body>
+</html>
