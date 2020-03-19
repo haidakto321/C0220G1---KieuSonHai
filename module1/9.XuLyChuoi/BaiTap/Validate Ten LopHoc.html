@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let nameClass;
+        regexp=/^[CAP]{1}[0-9]{4}[GHIKLM]{1}$/;
+        function checkNameClass(nameClass) {
+            if(regexp.test(nameClass)) {
+                return true
+            } return false
+        }
+        let nameClass1="C0220K";
+        console.log(checkNameClass(nameClass1));
+        let nameClass2="K0123K";
+        console.log(checkNameClass(nameClass2));
+        let nameClass3="A03451L";
+        console.log(checkNameClass(nameClass3));
+
+    </script>
+
+</body>
+</html>

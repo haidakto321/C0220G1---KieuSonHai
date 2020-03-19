@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function checkAccount(account) {
+            let regexp = /^[a-z 0-9]*[_a-z 0-9]{6}$/;
+            if(regexp.test(account)) {
+                return true
+            } else {return false}
+        }
+        let acc1="sonhai7";
+        console.log(checkAccount(acc1));
+        let acc2="son_hai";
+        console.log(checkAccount(acc2));
+        let acc3="0_son_hai";
+        console.log(checkAccount(acc3));
+    </script>
+
+</body>
+</html>
