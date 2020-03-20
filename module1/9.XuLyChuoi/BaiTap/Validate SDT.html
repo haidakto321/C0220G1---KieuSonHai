@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let regexp=/^(\d{2})-(0{1}\d{9})$/
+    let num=prompt("nhập số điện thoại");
+    function checkSDT(num) {
+        if (regexp.test(num)) {
+            return true
+        }
+        return false
+    }
+   alert(checkSDT(num));
+</script>
+
+</body>
+</html>
