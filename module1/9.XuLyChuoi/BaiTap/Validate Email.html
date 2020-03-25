@@ -8,10 +8,8 @@
     <script>
         regexp=/^[A-Za-z0-9]+[_A-Za-z0-9]@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/
         function checkMail(mail) {
-            if(regexp.test(mail)) {
-                return true
-            }
-                return false
+            return regexp.test(mail);
+
         }
         let mail1="hai07@gmail.com";
         console.log(checkMail(mail1));

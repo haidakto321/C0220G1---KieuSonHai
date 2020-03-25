@@ -24,6 +24,7 @@
                     break;
                 }
                 case 4: {
+                    deleteCustomer();
                     break;
                 }
                 case 5: {
@@ -37,18 +38,15 @@
         function addNewCustomer() {
             let customerInfo=[];
             let customerName=prompt("Customer Name");
-            let cmnd=prompt("So CMND");
-            cmnd=parseInt(cmnd);
+            let cmnd=parseInt(prompt("So CMND"));
             let namSinh=prompt("Enter birthday(dd/mm/yyyy)");
             let mail=prompt("Enter email");
             let adress=prompt("Customer adress");
             let loaiKhachHang=prompt("Type Customer");
-            let giamGia=prompt("Enter Discount If Have");
-            giamGia=parseInt(giamGia);
+            let giamGia=parseInt(prompt("Enter Discount If Have"));
             let nguoiDiChung=prompt("Number of accompanying");
             let loaiPhong=prompt("Type Room");
-            let soNgayThue=prompt("Rent Days");
-            soNgayThue=parseInt(soNgayThue);
+            let soNgayThue=parseInt(prompt("Rent Days"));
             let loaiDichVu=prompt("Type Service");
             customerInfo.push(customerName);
             customerInfo.push(cmnd);
@@ -83,6 +81,71 @@
             displayMainMenu();
         }
         function editCustomer() {
+            let temp = "";
+            for (let i = 0; i < arrListCustomer.length; i++) {
+                temp += i + ". Name: " + arrListCustomer[i][0] + "\n"
+            }
+            let chooseDisplay = parseInt(prompt(temp));
+            let chooseEdit = prompt("1.Tên: " + arrListCustomer[chooseDisplay][0] + '\n' +
+                "2.CMND: " + arrListCustomer[chooseDisplay][1] + '\n' +
+                "3.Ngày Sinh: " + arrListCustomer[chooseDisplay][2] + '\n' + "4.Mail: " + arrListCustomer[chooseDisplay][3] + '\n' +
+                "5.Địa Chỉ: " + arrListCustomer[chooseDisplay][4] + '\n' + "6.Loại Khách Hàng: " + arrListCustomer[chooseDisplay][5] + '\n' +
+                "7.Giảm giá: " + arrListCustomer[chooseDisplay][6] + '\n' + "8.Số người đi chung: " + arrListCustomer[chooseDisplay][7] + '\n' +
+                "9.Loại phòng: " + arrListCustomer[chooseDisplay][8] + '\n' + "10.Số ngày thuê: " + arrListCustomer[chooseDisplay][9] + '\n' +
+                "11.Loại dịch vụ: " + arrListCustomer[chooseDisplay][10] + '\n');
+            switch (chooseEdit) {
+                case '1': {
+                    customerName = prompt("Nhập tên");
+                    break;
+                }
+                case '2': {
+                    cmnd = prompt("Nhập số CMND");
+                    break;
+                }
+                case '3': {
+                    namSinh = prompt("Nhập ngày sinh");
+                    break;
+                }
+                case '4': {
+                    mail = prompt("Nhập mail");
+                    break;
+                }
+                case '5': {
+                    address = prompt("Địa Chỉ");
+                    break;
+                }
+                case '6': {
+                    loaiKhachHang = prompt("Loại Khách Hàng");
+                    break;
+                }
+                case '8': {
+                    nguoiDiChung = prompt("Số người đi chung");
+                    break;
+                }
+                case '9': {
+                    loaiPhong = prompt("Loại phòng");
+                    break;
+                }
+                case '10': {
+                    soNgayThue = prompt("Số ngày thuê");
+                    break;
+                }
+                case '11': {
+                    loaiDichVu = prompt("Loại dịch vụ");
+                    break;
+                }
+                default: {
+                    alert("Failed")
+                }
+            }
+            editCustomer();
+        }
+        function deleteCustomer() {
+            let temp = "";
+            for (let i = 0; i < arrListCustomer.length; i++) {
+                temp += i + ". Name: " + arrListCustomer[i][0] + "\n"
+            }
+            let chooseDisplay = parseInt(prompt(temp));
 
         }
         displayMainMenu();

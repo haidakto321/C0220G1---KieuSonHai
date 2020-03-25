@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Customer {
+        constructor(name,cmnd,birthday,email,adress,typeCustomer,discount,accompanying,rentDays,typeService,typeRoom) {
+            this.name=name;
+            this.cmnd=cmnd;
+            this.birthday=birthday;
+            this.email=email;
+            this.adress=adress;
+            this.typeCustomer=typeCustomer;
+            this.discount=discount;
+            this.accompanying=accompanying;
+            this.rentDays=rentDays;
+            this.typeService=typeService;
+            this.typeRoom=typeRoom;
+        }
+            getName=function () {
+                return this.name
+            };
+            setName=function (name) {
+                this.name=name
+            };
+            getCmnd=function () {
+                return this.cmnd
+            };
+            setCmnd=function (cmnd) {
+                this.cmnd=cmnd
+            };
+            setBirthday=function (birthday) {
+                this.birthday=birthday
+            };
+            getBirthday=function () {
+                return this.birthday
+            };
+            setEmail=function (email) {
+                this.email=email
+            };
+            getEmail=function () {
+                return this.email
+            };
+            setAdress=function (adress) {
+                this.adress=adress
+            };
+            getAdress=function () {
+                return adress
+            };
+            setTypeCustomer=function (typeCustomer) {
+                this.typeCustomer=typeCustomer
+            };
+            getTypeCustomer=function () {
+                return this.typeCustomer
+            };
+            setDiscount=function (discount) {
+                this.discount=discount
+            };
+            getDiscount=function () {
+                return this.discount
+            };
+            setAccompanying=function (accompanying) {
+                this.accompanying=accompanying
+            };
+            getAccompanying=function() {
+                return this.accompanying
+            };
+            setRentDays=function (rentDays) {
+                this.rentDays=rentDays
+            };
+            getRentDays=function () {
+                return this.rentDays
+            };
+            setTypeService=function (typeService) {
+                this.typeService=typeService
+            };
+            getTypeService=function () {
+                return this.typeService
+            };
+            setTypeRoom=function (typeRoom) {
+                this.typeRoom=typeRoom
+            };
+            getTypeRoom=function () {
+                return this.typeRoom
+            };
+            totalPay=function () {
+                let roomCost;
+                if(this.typeRoom==='Villa') {
+                    roomCost=500
+                } else if(this.typeRoom==='House') {
+                    roomCost=300
+                } else {roomCost=100};
+                return this.totalPay=roomCost*this.rentDays*(1-this.discount/100);
+            };
+
+            addNewCustomer=function () {
+                let arrListCustomer=[];
+                let customerInfo=[];
+                this.name=prompt("Customer Name");
+                let check=false;
+                // nhập cmnd
+                do {
+                    this.cmnd = parseInt(prompt("So CMND"));
+                    if(!checkCMND(this.cmnd)) {
+                        alert("Chỉ được nhập số mời nhập lại")
+                    } else check=true;
+                } while(!check);
+                function checkCMND(cmnd) {
+                    let regexp=/^[1-9]{1}[0-9]{8}$/;
+                    return regexp.test(cmnd)
+                }
+                // nhập birthday
+                check=false;
+                do {
+                    this.birthday=prompt("Enter birthday with syntax: dd/mm/yyyy)");
+                    if(!checkBirthday(this.birthday)) {
+                        alert("Bạn nhập sai cú pháp mời nhập lại")
+                    } else check=true;
+                } while(!check);
+                function checkBirthday(birthday) {
+                    let regexp=/^(0?[1-9]|[1-2][0-9]|3[0-1])\/(0?[1-9]|1[0-2])\/19([0-9]{2})$/;
+                    return regexp.test(birthday);
+                }
+                //nhập email
+                check=false;
+                do {
+                    this.email=prompt("Enter email with syntax: abc@abc.com)");
+                    if(!checkMail(this.email)) {
+                        alert("Bạn nhập sai cú pháp mời nhập lại")
+                    } else check=true;
+                } while(!check);
+                function checkMail(email) {
+                    let regexp=/^[A-Za-z0-9]+@[A-Za-z0-9]+\.com$/;
+                    return regexp.test(email);
+                }
+                this.adress=prompt("Customer adress");
+                this.typeCustomer=prompt("Type Customer");
+                //nhập discount
+                // check=false;
+                // do {
+                //     this.discount = parseInt(prompt("Enter Discount If Have"));
+                //     if(!checkDiscount(this.discount)) {
+                //         alert("Chỉ được nhập số mời nhập lại")
+                //     } else check=true
+                // } while(!check);
+                // function checkDiscount(discount) {
+                //     regexp=/^[1-9]{1}\d*$/;
+                //     return regexp.test(discount)
+                // }
+                this.accompanying=prompt("Number of accompanying");
+                this.typeRoom=prompt("Type Room");
+                //nhập ngày thuê
+                check=false;
+                do {
+                    this.rentDays = parseInt(prompt("Rent Days"));
+                    if(!checkRentDays(this.rentDays)) {
+                        alert("Chỉ được nhập số mời nhập lại")
+                    } check=true;
+                } while(!check);
+                function checkRentDays(rent) {
+                     let regexp=/^[1-9]+\d*$/;
+                    return regexp.test(rent)
+                }
+                this.typeService=prompt("Type Service");
+                customerInfo.push(this.name);
+                customerInfo.push(this.cmnd);
+                customerInfo.push(this.namSinh);
+                customerInfo.push(this.mail);
+                customerInfo.push(this.adress);
+                customerInfo.push(this.loaiKhachHang);
+                customerInfo.push(this.giamGia);
+                customerInfo.push(this.nguoiDiChung);
+                customerInfo.push(this.loaiPhong);
+                customerInfo.push(this.soNgayThue);
+                customerInfo.push(this.loaiDichVu);
+
+                arrListCustomer.push(customerInfo);
+                alert("Đã thêm thành công.");
+        };
+        displayMainMenu=function () {
+            let choose=parseInt(prompt("1.Add new customer."+"\n2.Display information of customer."+"\n3.Display total pay of customer."
+            +"\n4.Edit information of customer."+"\n5.Delete customer."+"\n6.Exit."));
+            let pick=this;
+            switch (choose) {
+                case 1: {
+                    pick.addNewCustomer();
+                    break;
+                }
+                case 2: {
+                    pick.displayCustomer();
+                    break;
+                }
+                case 3: {
+                    pick.totalPay();
+                    break
+
+                }
+                case 4: {
+                    pick.editCustomer();
+                    break;
+                }
+                case 5: {
+                    pick.deleteCustomer();
+                    break;
+                }
+                case 6: {
+                    break;
+                }
+                default: {
+                    alert("Failed");
+                }
+            }
+        };
+        displayCustomer=function() {
+            let temp="";
+            for(let i=0;i<arrListCustomer.length;i++) {
+                temp+=i+". Name: "+arrListCustomer[i][0]+"\n"
+            }
+            let chooseDisplay=parseInt(prompt(temp));
+            alert("Name of customer: " + arrListCustomer[chooseDisplay][0] + '\n' +
+                "CMND: " + arrListCustomer[chooseDisplay][1]+'\n' +
+                "Birthday: " + arrListCustomer[chooseDisplay][2] + '\n' + "Email: " + arrListCustomer[chooseDisplay][3] + '\n' +
+                "Adress: " + arrListCustomer[chooseDisplay][4] + '\n' + "Type of customer: " + arrListCustomer[chooseDisplay][5] + '\n' +
+                "Discount: " + arrListCustomer[chooseDisplay][6] + '\n' + "Accompanying: " + arrListCustomer[chooseDisplay][7] + '\n' +
+                "Type of room: " + arrListCustomer[chooseDisplay][8] + '\n' + "Rent days: " + arrListCustomer[chooseDisplay][9] + '\n' +
+                "Service type: " + arrListCustomer[chooseDisplay][10] + '\n');
+    };
+        editCustomer=function () {
+            let temp="";
+            for(let i=0;i<arrListCustomer.length;i++) {
+                temp+=i+" Name: "+arrListCustomer[i][0]+"\n";
+            }
+            let chooseDisplay=parseInt(prompt(temp));
+            let chooseEdit=prompt("Name of customer: " + arrListCustomer[chooseDisplay][0] + '\n' +
+                "CMND: " + arrListCustomer[chooseDisplay][1]+'\n' +
+                "Birthday: " + arrListCustomer[chooseDisplay][2] + '\n' + "Email: " + arrListCustomer[chooseDisplay][3] + '\n' +
+                "Adress: " + arrListCustomer[chooseDisplay][4] + '\n' + "Type of customer: " + arrListCustomer[chooseDisplay][5] + '\n' +
+                "Discount: " + arrListCustomer[chooseDisplay][6] + '\n' + "Accompanying: " + arrListCustomer[chooseDisplay][7] + '\n' +
+                "Type of room: " + arrListCustomer[chooseDisplay][8] + '\n' + "Rent days: " + arrListCustomer[chooseDisplay][9] + '\n' +
+                "Service type: " + arrListCustomer[chooseDisplay][10] + '\n');
+            switch (chooseEdit) {
+                case 1: {
+                    this.customerName=prompt("Nhập tên");
+                    break;
+                }
+                case 2: {
+                    this.cmnd = prompt("Nhập số CMND");
+                    break;
+                }
+                case 3: {
+                    this.namsinh = prompt("Nhập ngày sinh");
+                    break;
+                }
+                case 4: {
+                    this.mail = prompt("Nhập mail");
+                    break;
+                }
+                case 5: {
+                    this.address = prompt("Địa Chỉ");
+                    break;
+                }
+                case 6: {
+                    this.typeCustomer = prompt("Loại Khách Hàng");
+                    break;
+                }
+                case 8: {
+                    this.accompanying = prompt("Số người đi chung");
+                    break;
+                }
+                case 9: {
+                    this.typeroom = prompt("Loại phòng");
+                    break;
+                }
+                case 10: {
+                    this.rentdays = prompt("Số ngày thuê");
+                    break;
+                }
+                default: alert("Failed")
+            }
+            editCustomer();
+        };
+        deleteCustomer=function () {
+
+        }
+    }
+    let customer1=new Customer();
+    customer1.displayMainMenu();
+
+
+</script>
+</body>
+</html>

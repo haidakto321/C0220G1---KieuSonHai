@@ -8,19 +8,16 @@
     <p id= "diemTong"></p>
     <p id = " diemTB"></p>
         <script>
-            let diemToan;
-            let diemSinh;
-            let diemHoa;
-            diemToan = prompt("Nhap Diem Toan");
-            diemSinh = prompt("Nhap Diem Sinh");
-            diemHoa = prompt("Nhap Diem Hoa");
+            let diemToan=prompt("Nhap Diem Toan");
+            let diemSinh=prompt("Nhap Diem Sinh");
+            let diemHoa=prompt("Nhap Diem Hoa");
             Toan = parseInt(diemToan);
             Hoa = parseInt(diemHoa);
             Sinh = parseInt(diemSinh);
             let diemTong = ( Toan + Sinh + Hoa );
             let diemTB = diemTong / 3 ;
             document.getElementById("diemTong").innerText = " Diem Tong La: " + diemTong;
-            document.getElementById("diemTB").innerText = " Diem Trung Binh La :" + diemTB;
+            document.getElementById("diemTB").innerText = " Diem Trung Binh La: " + diemTB;
         </script>
 </body>
 </html>
