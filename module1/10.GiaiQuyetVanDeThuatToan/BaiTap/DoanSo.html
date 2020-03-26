@@ -10,7 +10,22 @@
     let arr=[];
     for(let i=0;i<100;i++) {
         arr.push(i);
-        document.write(arr)
+    }
+    document.write("["+arr.join(" - ")+"]<br>");
+    document.write("Tìm Kiếm tuyến tính <br>");
+    timkiem1 = thuatToanTuyenTinh(guessNumber,arr);
+    if (timkiem1 === -1){
+        document.write("Ko có số nào trong mảng<br>")
+    }else {
+        document.write("Số "+guessNumber+" ở vị trí thứ arr["+timkiem1+"] = "+arr[timkiem1]+"<br>")
+    }
+    function thuatToanTuyenTinh(doanSo, mangso) {
+        for (let i =0; i<mangso.length ;i++){
+            if (mangso[i] === doanSo){
+                return i
+            }
+        }
+        return -1
     }
 </script>
 </body>

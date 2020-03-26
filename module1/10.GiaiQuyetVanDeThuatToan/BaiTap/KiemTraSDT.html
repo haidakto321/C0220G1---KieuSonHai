@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sim=["0349034567","035012538","070413969","077797463","0913210323","094409403"];
+    let Viettel=[]; Mobiphone=[]; Vinaphone=[];
+    for(let i=0;i<sim.length;i++) {
+        if(sim[i].substr(0,3)==="034"||sim[i].substr(0,3)==="035"||sim[i].substr(0,3)==="036") {
+            Viettel.push(sim[i]);
+        } else if(sim[i].substr(0,3)==="070"||sim[i].substr(0,3)==="075"||sim[i].substr(0,3)==="077") {
+            Mobiphone.push(sim[i]);
+        } else if(sim[i].substr(0,3)==="091"||sim[i].substr(0,3)==="094") {
+            Vinaphone.push(sim[i]);
+        }
+    }
+    document.write("Viettel: "+Viettel.join("-")+"<br/>");
+    document.write("Mobiphone: "+Mobiphone.join("-")+"<br/>");
+    document.write("VinaPhone: "+Vinaphone.join("-")+"<br/>");
+</script>
+</body>
+</html>
