@@ -283,7 +283,12 @@
             editCustomer();
         };
         deleteCustomer=function () {
-
+            let temp="";
+            for(let i=0;i<arrListCustomer.length;i++) {
+                temp+=i+" Name: "+arrListCustomer[i][0]+"\n";
+            }
+            let chooseDisplay=parseInt(prompt(temp));
+            let choose_delete=prompt("Name of customer: " + arrListCustomer[chooseDisplay][0]);
         }
     }
     let customer1=new Customer();

@@ -24,12 +24,128 @@
     // let mang=chuoi.split("");
     // document.write("Có "+mang.length+" từ trong chuỗi");
 
-    //Bài 3:Đếm số nguyên âm phụ âm
-    let chuoi=prompt("Nhập chuỗi");
-    let regexp=/^[ueoai]$/i;
-    let mang=chuoi.split("");
-    console.log(chuoi.replace(regexp,""))
-</script>
+    //Bài 3:Hiện giá trị lớn nhất. In ra giá trị trung bình trong mảng
+    // let aray = new Array(10), i = 0;
+    // let Max,pos=0,TB,Tong=0.0;
+    // while (i < 10) {
+    //     aray[i] = parseInt(prompt("Nhap vao so nguyen"));
+    //     i++;
+    // }
+    // Max=aray[0];
+    // for (let j = 1; j < aray.length; j++) {
+    //     if (Max<aray[j]){
+    //         Max=aray[j];
+    //         pos=j;
+    //     }
+    // }
+    // document.write("So lon nhat trong mang la: "+Max+" o vi tri "+pos+" cua mang. ");
+    // for (let x=0;x<aray.length;x++){
+    //     Tong+=aray[x];
+    // }
+    // TB=(Tong/aray.length);
+    // document.write("Trung binh cac phan tu trong mang la: "+TB);
 
+    //Bài 4: Đảo ngược mảng
+
+    // let aray = new Array(5), i = 0;
+    // document.write("Gia tri nhap <br>");
+    // while (i < 5) {
+    //     aray[i] = parseInt(prompt("Nhap vao so nguyen"));
+    //     document.write(aray[i]+"<br>");
+    //     i++;
+    // }
+    // aray.reverse();
+    // document.write("Gia tri dao nguoc: <br>");
+    // for (let j=0;j<aray.length;j++) {
+    //     document.write(aray[j] + "<br>")
+    // }
+    //Bài 5: Đếm số nguyên âm
+    // let arr = new Array(5),i=0,count=0;
+    // while (i<5){
+    //     arr[i] = parseInt(prompt("Nhap vao so nguyen"));
+    //     i++;
+    // }
+    // for (let j=0;j<arr.length;j++){
+    //     if (arr[j]<0){
+    //         count++;
+    //         document.write("arr["+j+"] = "+arr[j]+"<br>  ");
+    //     }
+    // }document.write("Co "+count+" phan tu am trong mang");
+
+    //Bài 6: kiểm tra 1 số có trong mảng ko
+    // let arr = new Array(10),i=0;
+    // while (i<10){
+    //     arr[i] = parseInt(prompt("Nhap vao so nguyen"));
+    //     i++;
+    // }
+    // let V = parseInt(prompt("Nhap vao so V"));
+    // if(arr.indexOf(V)>=0){
+    //     alert("V is in the array");
+    // }else {
+    //     alert("V is not in the array");
+    // }
+
+    //Bài 7: kiểm tra và xóa số V khỏi mảng
+    // let arr = new Array(10), i = 0;
+    // while (i < 10) {
+    //     arr[i] = parseInt(prompt("Nhap vao so nguyen"));
+    //     i++;
+    // }
+    // let V = parseInt(prompt("Nhap vao so V"));
+    // while (arr.indexOf(V) >= 0) {
+    //     if (arr.indexOf(V) >= 0) {
+    //         for (let x = (arr.indexOf(V) + 1); x < arr.length; x++) {
+    //             arr[x - 1] = arr[x];
+    //         }
+    //         arr.pop();
+    //     }
+    // }
+    // for (let j = 0; j < arr.length; j++) {
+    //     document.write("arr[" + j + "] = " + arr[j] + "<br>");
+    // }
+
+    //Bài 8: sx mảng giảm dần
+    // let arr = new Array(10), i = 0;
+    // while (i < 10) {
+    //     arr[i] = parseInt(prompt("Nhap vao so nguyen"));
+    //     i++;
+    // }
+    // document.write("Mang chua duoc sap xep <br>");
+    // for (let j = 0; j < arr.length; j++) {
+    //     document.write("arr[" + j + "] = " + arr[j] + "<br>  ");
+    // }
+    // document.write("Mang duoc sap xep <br>");
+    // arr.sort();
+    // for (let x = 0; x < (arr.length); x++) {
+    //     for (let y = 0; y < arr.length; y++) {
+    //         let temp=0;
+    //         if (arr[x] < arr[y]) {
+    //             temp=arr[x];
+    //             arr[x]=arr[y];
+    //             arr[y]=temp;
+    //         }
+    //     }
+    // }
+    // for (let j = 0; j < arr.length; j++) {
+    //     document.write("arr[" + j + "] = " + arr[j] + "<br>  ");
+    // }
+
+    //Bai 9: Nối 2 mảng
+    let arr1 = new Array(10), j=0,i = 0,x=0,y=0, arr2 = new Array(10),arr3 = new Array(20);
+    while (i < 10) {
+        arr1[i] = parseInt(prompt("Nhap vao so nguyen cho mang A"));
+        i++;
+    }
+    while (j < 10) {
+        arr2[j] = parseInt(prompt("Nhap vao so nguyen cho mang B"));
+        j++;
+    }
+    arr3 = arr1.concat(arr2);
+    // while (x<20){
+    //     document.write(arr3[x]+"<br>");
+    //     x++;
+    // }
+    document.write(arr3)
+</script>
 </body>
 </html>
