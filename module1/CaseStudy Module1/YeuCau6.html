@@ -301,6 +301,97 @@
     let customer1=new Customer();
     customer1.displayMainMenu();
 
+    class Employee {
+        constructor(name,birthday,cmnd,phone,email,level,location,salary) {
+            this.getName=function () {
+                return this.name
+            };
+            this.getBirthday=function () {
+                return this.birthday
+            };
+            this.getCmnd=function () {
+                return this.cmnd
+            };
+            this.getPhone=function () {
+                return this.phone
+            };
+            this.getEmail=function () {
+                return this.email
+            };
+            this.getLevel=function () {
+                return this.level
+            };
+            this.getLocation=function () {
+                return this.location
+            };
+            this.getSalary=function () {
+                if(this.getLocation()==="Manager") {
+                    this.salary=500
+                } else if(this.getLocation()==="Sale") {
+                    this.salary=300
+                } else if(this.getLocation()==="Marketing") {
+                    this.salary=200
+                }
+                return this.salary
+            };
+            this.setName=function (name) {
+                this.name=name;
+            };
+            this.setBirthday=function (birthday) {
+                this.birthday=birthday;
+            };
+            this.setCmnd=function (cmnd) {
+                this.cmnd=cmnd;
+            };
+            this.setPhone=function (phone) {
+                this.phone=phone;
+            };
+            this.setEmail=function (email) {
+                this.email=email;
+            };
+            this.setLevel=function (level) {
+                this.level=level;
+            };
+            this.setLocation=function (location) {
+                this.location=location;
+            };
+        }
+        listEmployees=[];
+        addNewEmployee=function () {
+            let employee=new Employee();
+            employee.setName(prompt("Enter name: "));
+            employee.setBirthday(prompt("Enter birthday: "));
+            employee.setCmnd(prompt("Enter cmnd: "));
+            employee.setEmail(prompt("Enter email: "));
+            employee.setPhone(prompt("Enter phone number: "));
+            employee.setLevel(prompt("Enter level: "));
+            employee.setLocation(prompt("Enter location: "));
+            listEmployees.push(employee);
+            alert("Da them thanh cong employee");
+            displayMainMenu();
+        };
+        displayEmployee=function () {
+            let result="";
+            for(let i=0;i<this.listEmployees.length;i++) {
+                result+=i+". Name "+listEmployees[i].getName()+"\n";
+            }
+            let choose=parseInt(prompt(result));
+            alert("Name: "+listEmployees[choose].getName()+"\n"+"Birthday: "+listEmployees[choose].getBirthday()+"\n"
+            +"Email: "+listEmployees[choose].getEmail()+"\n"
+            +"CMND: "+listEmployees[choose].getCmnd()+"\n"+"Phone number: "+listEmployees[choose].getPhone()+"\n"
+            +"Level: "+listEmployees[choose].getLevel()+"\n"+"Vi tri: "+listEmployees[choose].getLocation());
+            displayMainMenu();
+        };
+        displaySalary=function () {
+            let result="";
+            for(let i=0;i<this.listEmployees.length;i++) {
+                result+=i+". Name "+listEmployees[i].getName()+"\n";
+            }
+            let choose=parseInt(prompt(result));
+            alert("Salary of employee "+listEmployees[choose].getName() +" is "+listEmployees[choose].getSalary());
+            displayMainMenu();
+        }
+    }
 
 </script>
 </body>
