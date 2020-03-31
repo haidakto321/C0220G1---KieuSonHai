@@ -6,15 +6,16 @@
 </head>
 <body>
     <script>
-        let input=prompt("Nhập vào");
-        function kiemtra() {
-            if(!isNaN(input)) {
-                alert("Đây là chuỗi")
-            } else {
-                alert("Đây là số")
+        let num = prompt("Nhap vao mot ky tu");
+        alert(isNum(num));
+        function isNum(num) {
+            if (isNaN(num)===true){
+                return false;
+            }
+            else if (isNaN(num)===false){
+                return true;
             }
         }
-        document.write()
     </script>
 
 </body>
