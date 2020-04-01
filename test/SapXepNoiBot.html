@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[4,7,11,19,0,3,8];
+    // sx đổi chỗ trực tiếp
+    // for(let i=0;i<arr.length-1;i++) {
+    //     for( let j=i+1;j<arr.length;j++) {
+    //         if(arr[i]<arr[j]) {
+    //             let temp=arr[i];
+    //             arr[i]=arr[j];
+    //             arr[j]=temp;
+    //         }
+    //     }
+    // }
+    // document.write(arr);
+
+    //sx chèn
+    // function insertionSort(arr) {
+    //     let i, len = arr.length, el, j;
+    //
+    //     for (i = 1; i < len; i++) {
+    //         el = arr[i];
+    //         j = i;
+    //         while (j > 0 && arr[j-1] > toInsert) {
+    //             arr[j] = arr[j-1];
+    //             j--;
+    //         }
+    //         arr[j] = el;
+    //     }
+    //     return arr;
+    // }
+
+    //sx nổi bọt
+    // function bubbleSort(array){
+    //     for(let i = 0; i < array.length - 1; i++){
+    //         for(let j = array.length - 1; j > i; j--){
+    //             if(array[j] < array[j-1]){
+    //                 let t = array[j];
+    //                 array[j] = array[j - 1];
+    //                 array[j - 1] = t;
+    //             }
+    //         }
+    //     }
+    // }
+
+    //sx nhị phân
+    // function binaryInsertionSort(arr){
+    //     let l, r, m, x;
+    //     for(let i = 1; i < arr.length; i++){
+    //         l = 0;
+    //         r = i - 1;
+    //         x = arr[i];
+    //         while(l <= r){
+    //             m = Math.floor((l + r) / 2);
+    //             if(arr[m] > x)
+    //             {r = m - 1}
+    //             else l = m + 1;
+    //         }
+    //         for(let j = i; j > l; j--)
+    //             arr[j] = arr[j - 1];
+    //         arr[l] = x;
+    //     }
+    // }
+    // binaryInsertionSort(arr);
+    // document.write(arr);
+</script>
+</body>
+</html>

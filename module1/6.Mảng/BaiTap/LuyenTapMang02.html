@@ -65,17 +65,27 @@
     // }
 
     //Bài 6: Tìm 1 kí tự và thay bằng kí tự khác trong mảng
-    let varindex = parseInt(prompt("Nhap so phan tu cua mang"));
-    let mang = new Array(varindex);
-    for (let i=0;i<varindex;i++){
-        mang[i]=prompt("Nhap gia tri cua mang");
-    }
-    for (let j=0;j<mang.length;j++){
-        if(mang[j]=="-"){
-            mang[j]="_";
+    // let varindex = parseInt(prompt("Nhap so phan tu cua mang"));
+    // let mang = new Array(varindex);
+    // for (let i=0;i<varindex;i++){
+    //     mang[i]=prompt("Nhap gia tri cua mang");
+    // }
+    // for (let j=0;j<mang.length;j++){
+    //     if(mang[j]=="-"){
+    //         mang[j]="_";
+    //     }
+    // }
+    // document.write(mang.join(""));
+
+    //Bài thêm: chữ đầu tiên của từng vị trí thành in hoa
+    let arr=["hải","lộc","An","gia","sơn"];
+    function check(arr) {
+        for(let i=0;i<arr.length;i++) {
+            return arr[i].charAt(0).toUpperCase()+arr.slice(1);
         }
+        return  arr.join(" ");
     }
-    document.write(mang.join(""));
+    document.write(check(arr));
 </script>
 </body>
 </html>
