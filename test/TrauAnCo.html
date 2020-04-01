@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let trauDung,trauNam,trauGia;
+    for(trauDung = 0; trauDung <=100;trauDung++)
+        for(trauNam = 0; trauNam <=100; trauNam++ )
+            for(trauGia = 0; trauGia <=100; trauGia++ )
+                if ((5*trauDung + 3*trauNam + trauGia/3 == 100)&&(trauGia%3 ==0)&& (trauDung+trauNam+trauGia == 100))
+                {
+                    console.log("So trau dung:" + trauDung);
+                    console.log("So trau nam:" + trauNam);
+                    console.log("So trau gia:" + trauGia);
+                    console.log("----------------------");
+                    // document.getElementById("dung").innerHTML = ("so trau dung:" + trauDung);
+                    // document.getElementById("nam").innerHTML = ("so trau nam:" + trauNam);
+                    // document.getElementById("gia").innerHTML = ("so trau gia:" + trauGia);
+                }
+</script>
+</body>
+</html>

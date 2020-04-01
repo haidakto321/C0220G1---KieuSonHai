@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Student {
+            constructor(name,age,diachi) {
+                this.name=name;
+                this.age=age;
+                this.diachi=diachi;
+                this.info=function displaySinhVien() {
+                    return alert(this.name);
+                }
+            }
+        }
+        let sinhvien1= new Student("Hai",25,"Da Nang");
+        sinhvien1.info()
+    </script>
+
+</body>
+</html>

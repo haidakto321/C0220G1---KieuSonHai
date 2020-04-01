@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="tinhTong()">nhap so</button>
+<script>
+    // login =prompt("moi ban dang nhap", '');
+    // let  message =( login == 'Employee') ? 'Hello' :
+    //     ( login == 'Director' )? 'Greetings' :
+    //         (login == '') ? 'No login' : '';
+    // alert(message);
+
+    function tinhTong(){
+        let n = prompt("nhap dãy so nguyên dương");
+        alert("tong cac chu so chan la :" + nhapso(n));
+    }
+    function nhapso(n){
+        let sum = 0;
+        while (n>0) {
+            if (n % 2 === 0 )
+                sum += n % 10;
+            n = Math.floor(n/10);
+        }
+        return sum;
+    }
+</script>
+</body>
+</html>
