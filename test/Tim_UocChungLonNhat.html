@@ -6,25 +6,25 @@
 </head>
 <body>
 <script>
-    let a=parseInt(prompt("Nhap so thu nhat"));
-    let b=parseInt(prompt("Nhap so thu hai"));
+    let a = parseInt(prompt("Nhap so thu nhat"));
+    let b = parseInt(prompt("Nhap so thu hai"));
+
     function UCLN(a, b) {
-    if (a === 0) {
-        return b;
+        if (a === 0) {
+            return b;
+        }
+
+        while (b !== 0) {
+            if (a > b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        return a;
     }
 
-
-    while (b !== 0) {
-    if (a > b) {
-        a = a - b;
-    }
-    else {
-        b = b - a;
-    }
-    }
-    return a;
-    }
-    document.write(UCLN(a,b));
+    document.write(UCLN(a, b));
 </script>
 </body>
 </html>

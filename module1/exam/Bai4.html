@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class HocSinh {
+        constructor(stt,name,birthday,diemTB) {
+            this.name=name;
+            this.stt=stt;
+            this.birthday=birthday;
+            this.diemTB=diemTB;
+        }
+        bio=function() {
+          document.write("Học sinh "+this.name+" có số thứ tự "+ this.stt
+              +" có ngày sinh "+this.birthday+" có điểm trung bình là "+this.diemTB+". ")
+        };
+        getStt=function () {
+            return this.stt
+        };
+        getName=function () {
+            return this.name
+        };
+        getBirthday=function () {
+            return this.birthday
+        };
+        getDiemTB=function () {
+            return this.diemTB
+        };
+        setName=function (name) {
+            this.name=name
+        };
+        setStt=function (stt) {
+            this.stt=stt
+        };
+        SetBirthday=function (birthday) {
+            this.birthday=birthday
+        };
+        setDiemTB=function (diemTB) {
+            this.diemTB=diemTB
+        };
+        checkSkill=function () {
+            if(this.getDiemTB<=10 && this.getDiemTB>8) {
+                return this.skill="Giỏi"
+            } else if(this.getDiemTB<=8 && this.getDiemTB>=6.5) {
+                return this.skill="Khá"
+            } else if(this.getDiemTB<6.5 && this.getDiemTB>=5) {
+                return this.skill="Trung Bình"
+            } else if(this.getDiemTB<5 && this.getDiemTB>=3.5) {
+                return this.skill="Yếu"
+            } else {
+                return this.skill="Kém"
+            }
+        }
+    }
+    let student1=new HocSinh(7,"Hải","27/5/1997",9);
+    student1.bio();
+    document.write("Học lực loại "+student1.checkSkill());
+</script>
+</body>
+</html>
